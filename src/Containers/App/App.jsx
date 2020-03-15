@@ -59,11 +59,13 @@ const App = () => {
             <select className="select-box" name="countryCode" id="countryCode" onChange={e => handleOnChange(e.target.value)} value={countryCode}>
               {
                 countryList.map((country, index) => 
-                  <option value={country.alpha2Code} key={country.alpha2Code}>{country.name}</option>
+                  <option value={country.alpha2Code} key={country.alpha2Code}>
+                    {country.name}
+                  </option>
                 )
               }
             </select>
-
+            <small className="help-text">ketuk untuk mengganti negara</small>
 
             <div className="counter-lg-box">
               <div className="counter-lg-value">

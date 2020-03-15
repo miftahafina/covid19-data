@@ -3,6 +3,7 @@
 :root {
   --primary: #000A12;
   --secondary: #263238;
+  --tertiary: #182025;
   --text: #FFFFFF;
   --text-secondary: #4F5B62;
   --text-tertiary: #898989;
@@ -51,7 +52,7 @@ body {
 }
 
 .content {
-  margin-top: 40px;
+  margin-top: 24px;
   width: 100%;
   flex: 1;
   box-sizing: border-box;
@@ -73,14 +74,23 @@ body {
   border-radius: 16px;
   padding: 16px;
   color: var(--text);
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   border: none;
   outline: none;
+
+  -moz-appearance:none; /* Firefox */
+  -webkit-appearance:none; /* Safari and Chrome */
+  appearance:none;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.select-box:active {
+  outline: none;
+  background-color: var(--tertiary);
 }
 
 .counter-lg-box {
@@ -90,6 +100,7 @@ body {
   border: 2px solid var(--secondary);
   border-radius: 16px;
   padding: 16px;
+  margin-top: 16px;
 
   display: flex;
   flex-direction: column;
@@ -122,7 +133,6 @@ body {
   flex: 1;
   box-sizing: border-box;
   border: 2px solid var(--secondary);
-  /* background-color: var(--secondary); */
   border-radius: 16px;
   padding: 16px;
 
@@ -161,4 +171,9 @@ body {
 .footer a {
   color: var(--text-secondary);
   text-decoration: none;
+}
+
+.help-text {
+  color: var(--text-secondary);
+  font-size: 12px;
 }
