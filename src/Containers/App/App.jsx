@@ -7,6 +7,7 @@ const App = () => {
   const [countryList, setCountryList] = useState({});
   const [countryCode, setCountryCode] = useState('ID');
   const [loading, setLoading] = useState(true);
+  const [found, setFound] = useState(true);
   
   useEffect(() => {
     // spesific country
@@ -14,9 +15,11 @@ const App = () => {
       .then(res => {
         setCovidCount(res.data);
         setLoading(false);
+        setFound(true);
       })
       .catch(err => {
         console.log(err);
+        setFound(false);
       });
   }, [countryCode]);
 
@@ -27,7 +30,11 @@ const App = () => {
         console.log(res.data);
         setCountryList(res.data);
       })
-  }, [])
+  }, []);
+
+  useEffect(() => {
+    console.log('found', found);
+  })
 
   const percentage = (value, total) => {
     return (value / total * 100).toFixed(2);
@@ -67,47 +74,52 @@ const App = () => {
             </select>
             <small className="help-text">ketuk untuk mengganti negara</small>
 
-            <div className="counter-lg-box">
-              <div className="counter-lg-value">
-                {confirmed.value}
-              </div>
-              <div className="counter-lg-label">
-                Terkonfirmasi
-              </div>
-            </div>
+            {
+              !found ? <p>Data tidak ditemukan.</p> :
+              <Fragment>
+                <div className="counter-lg-box">
+                  <div className="counter-lg-value">
+                    {confirmed.value}
+                  </div>
+                  <div className="counter-lg-label">
+                    Terkonfirmasi
+                  </div>
+                </div>
 
-            <div className="counter-container">
-              <div className="counter-box">
-                <div className="counter-value">
-                  {recovered.value}
-                </div>
-                <div className="counter-label">
-                  Sembuh
-                </div>
-                <div className="counter-percentage">
-                  {percentage(recovered.value, confirmed.value)}%
-                </div>
-              </div>
+                <div className="counter-container">
+                  <div className="counter-box">
+                    <div className="counter-value">
+                      {recovered.value}
+                    </div>
+                    <div className="counter-label">
+                      Sembuh
+                    </div>
+                    <div className="counter-percentage">
+                      {percentage(recovered.value, confirmed.value)}%
+                    </div>
+                  </div>
 
-              <div className="counter-box-separator"></div>
+                  <div className="counter-box-separator"></div>
 
-              <div className="counter-box">
-                <div className="counter-value">
-                  {deaths.value}
+                  <div className="counter-box">
+                    <div className="counter-value">
+                      {deaths.value}
+                    </div>
+                    <div className="counter-label">
+                      Meninggal
+                    </div>
+                    <div className="counter-percentage">
+                      {percentage(deaths.value, confirmed.value)}%
+                    </div>
+                  </div>
                 </div>
-                <div className="counter-label">
-                  Meninggal
-                </div>
-                <div className="counter-percentage">
-                  {percentage(deaths.value, confirmed.value)}%
-                </div>
-              </div>
-            </div>
 
-            <div className="footer">
-              Data per-{lastUpdateIndo(lastUpdate)} <br></br>
-              diambil dari <a href="https://github.com/mathdroid/covid-19-api">mathdroid/covid-19-api</a>
-            </div>
+                <div className="footer">
+                  Data per-{lastUpdateIndo(lastUpdate)} <br></br>
+                  diambil dari <a href="https://github.com/mathdroid/covid-19-api">mathdroid/covid-19-api</a>
+                </div>
+              </Fragment>
+            }
           </Fragment>
         }
       </div>
