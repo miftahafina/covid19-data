@@ -27,7 +27,6 @@ const App = () => {
     // countries
     axios.get('https://restcountries.eu/rest/v2/all')
       .then(res => {
-        console.log(res.data);
         setCountryList(res.data);
       })
   }, []);
