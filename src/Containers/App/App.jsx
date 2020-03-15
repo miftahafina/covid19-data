@@ -49,7 +49,7 @@ const App = () => {
   return (
     <div className="container">
       <div className="header">
-        <div className="title">COVID-19 di Indonesia</div>
+        <div className="title">COVID-19 di Berbagai Negara</div>
       </div>
       
       <div className="content">
