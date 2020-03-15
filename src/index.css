@@ -46,6 +46,10 @@ body {
   justify-content: center;
 }
 
+.header:hover {
+  cursor: pointer;
+}
+
 .title {
   font-size: 16px;
   color: var(--text-light);

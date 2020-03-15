@@ -55,7 +55,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <div className="header">
+      <div className="header" onClick={() => handleOnChange('ID')}>
         <div className="title">COVID-19 di Berbagai Negara</div>
       </div>
       
