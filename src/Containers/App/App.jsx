@@ -32,10 +32,6 @@ const App = () => {
       })
   }, []);
 
-  useEffect(() => {
-    console.log('found', found);
-  })
-
   const percentage = (value, total) => {
     return (value / total * 100).toFixed(2);
   }
