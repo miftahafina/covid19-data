@@ -77,7 +77,7 @@ const App = () => {
               </div>
             </div>
 
-            <div className="credit">
+            <div className="footer">
               Data per-{lastUpdateIndo(lastUpdate)} <br></br>
               diambil dari <a href="https://github.com/mathdroid/covid-19-api">mathdroid/covid-19-api</a>
             </div>
