@@ -1,13 +1,145 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+:root {
+  --primary: #000A12;
+  --secondary: #263238;
+  --text: #FFFFFF;
+  --text-secondary: #4F5B62;
+  --text-tertiary: #898989;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html, body, .container, #root {
+  /* height: 100%; */
+  min-height: 100%;
+}
+
+html {
+  position: relative;
+  min-width: 250px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--primary);
+}
+
+.container {
+  color: var(--text);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header {
+  width: 100%;
+  flex: 0 0 40px;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: var(--secondary);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 16px;
+  color: var(--text-light);
+}
+
+.content {
+  margin-top: 80px;
+  width: 100%;
+  flex: 1;
+  box-sizing: border-box;
+  background-color: var(--primary);
+  border-radius: 16px 16px 0px 0px;
+  padding: 16px 16px 80px 16px ;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.counter-lg-box {
+  width: 100%;
+  flex: 1;
+  box-sizing: border-box;
+  background-color: var(--secondary);
+  border-radius: 16px;
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter-lg-value {
+  font-size: 96px;
+}
+
+.counter-lg-label {
+  font-size: 18px;
+}
+
+.counter-container {
+  margin-top: 16px;
+  width: 100%;
+  flex: 1;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  justify-content: center;
+}
+
+.counter-box {
+  width: 100%;
+  flex: 1;
+  box-sizing: border-box;
+  background-color: var(--secondary);
+  border-radius: 16px;
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter-value {
+  font-size: 64px;
+}
+
+.counter-label {
+  font-size: 16px;
+}
+
+.counter-percentage {
+  margin-top: 8px;
+  font-size: 10px;
+  color: var(--text-tertiary)
+}
+
+.counter-box-separator {
+  width: 16px;
+}
+
+.footer {
+  margin-top: 32px;
+  line-height: 18px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  text-align: center;
+}
+
+.footer a {
+  color: var(--text-secondary);
+  text-decoration: none;
 }
