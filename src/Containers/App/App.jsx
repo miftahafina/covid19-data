@@ -38,7 +38,7 @@ const App = () => {
       
       <div className="content">
         {
-          loading ? <p>Loading</p> :
+          loading ? <p>Memuat...</p> :
           <Fragment>
             <div className="counter-lg-box">
               <div className="counter-lg-value">
