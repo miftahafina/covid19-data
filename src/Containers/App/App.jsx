@@ -4,17 +4,21 @@ import axios from 'axios';
 
 const App = () => {
   const [covidCount, setCovidCount] = useState(0);
+
   const [countryList, setCountryList] = useState({});
   const [countryCode, setCountryCode] = useState('ID');
-  const [loading, setLoading] = useState(true);
+
+  const [loadingCovidCount, setloadingCovidCount] = useState(true);
+  const [loadingCountryList, setloadingCountryList] = useState(true);
+
   const [found, setFound] = useState(true);
   
   useEffect(() => {
-    // spesific country
+    // covid data
     axios.get(`https://covid19.mathdro.id/api/countries/${countryCode}`)
       .then(res => {
         setCovidCount(res.data);
-        setLoading(false);
+        setloadingCovidCount(false);
         setFound(true);
       })
       .catch(err => {
@@ -24,11 +28,15 @@ const App = () => {
   }, [countryCode]);
 
   useEffect(() => {
-    // countries
+    // country list
     axios.get('https://restcountries.eu/rest/v2/all')
       .then(res => {
         setCountryList(res.data);
+        setloadingCountryList(false)
       })
+      .catch(err => {
+        console.log(err);
+      });
   }, []);
 
   const percentage = (value, total) => {
@@ -46,6 +54,10 @@ const App = () => {
     setCountryCode(value);
   }
 
+  useEffect(() => {
+    console.log('effect:', loadingCountryList);
+  }, [loadingCountryList])
+
   const { confirmed, recovered, deaths, lastUpdate } = covidCount;
 
   return (
@@ -56,7 +68,7 @@ const App = () => {
       
       <div className="content">
         {
-          loading ? <p>Memuat...</p> :
+          loadingCountryList ? <p>Memuat...</p> :
           <Fragment>
             <select className="select-box" name="countryCode" id="countryCode" onChange={e => handleOnChange(e.target.value)} value={countryCode}>
               {
@@ -70,7 +82,7 @@ const App = () => {
             <small className="help-text">ketuk untuk mengganti negara</small>
 
             {
-              !found ? <p>Data tidak ditemukan.</p> :
+              !found || loadingCovidCount ? <p>Data tidak ditemukan.</p> :
               <Fragment>
                 <div className="counter-lg-box">
                   <div className="counter-lg-value">
