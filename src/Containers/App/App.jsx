@@ -11,22 +11,25 @@ const App = () => {
   useEffect(() => {
     axios.get(url)
       .then(res => {
-        console.log('axios id:', res.data);
         setCovidCount(res.data);
         setLoading(false);
+      })
+      .catch(err => {
+        console.log(err);
       });
   }, []);
+
+  const percentage = (value, total) => {
+    return (value / total * 100).toFixed(2);
+  }
 
   const lastUpdateIndo = (date) => {
     const d = new Date(date);
     const monthIndo = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
-
+    
     return `${d.getDate()} ${monthIndo[d.getMonth()]} ${d.getFullYear()} pukul ${d.getHours()}.${d.getMinutes()} WIB`;
   }
 
-  const prosentase = (value, total) => {
-    return (value / total * 100).toFixed(2);
-  }
 
   const { confirmed, recovered, deaths, lastUpdate } = covidCount;
 
@@ -58,7 +61,7 @@ const App = () => {
                   Sembuh
                 </div>
                 <div className="counter-percentage">
-                  {prosentase(recovered.value, confirmed.value)}%
+                  {percentage(recovered.value, confirmed.value)}%
                 </div>
               </div>
 
@@ -72,7 +75,7 @@ const App = () => {
                   Meninggal
                 </div>
                 <div className="counter-percentage">
-                  {prosentase(deaths.value, confirmed.value)}%
+                  {percentage(deaths.value, confirmed.value)}%
                 </div>
               </div>
             </div>
