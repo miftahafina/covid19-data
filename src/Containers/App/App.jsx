@@ -4,12 +4,13 @@ import axios from 'axios';
 
 const App = () => {
   const [covidCount, setCovidCount] = useState(0);
+  const [countryList, setCountryList] = useState({});
+  const [countryCode, setCountryCode] = useState('ID');
   const [loading, setLoading] = useState(true);
   
-  const url = 'https://covid19.mathdro.id/api/countries/id';
-
   useEffect(() => {
-    axios.get(url)
+    // spesific country
+    axios.get(`https://covid19.mathdro.id/api/countries/${countryCode}`)
       .then(res => {
         setCovidCount(res.data);
         setLoading(false);
@@ -17,7 +18,16 @@ const App = () => {
       .catch(err => {
         console.log(err);
       });
-  }, []);
+  }, [countryCode]);
+
+  useEffect(() => {
+    // countries
+    axios.get('https://restcountries.eu/rest/v2/all')
+      .then(res => {
+        console.log(res.data);
+        setCountryList(res.data);
+      })
+  }, [])
 
   const percentage = (value, total) => {
     return (value / total * 100).toFixed(2);
@@ -30,6 +40,9 @@ const App = () => {
     return `${d.getDate()} ${monthIndo[d.getMonth()]} ${d.getFullYear()} pukul ${d.getHours()}.${d.getMinutes()} WIB`;
   }
 
+  const handleOnChange = (value) => {
+    setCountryCode(value);
+  }
 
   const { confirmed, recovered, deaths, lastUpdate } = covidCount;
 
@@ -43,6 +56,15 @@ const App = () => {
         {
           loading ? <p>Memuat...</p> :
           <Fragment>
+            <select className="select-box" name="countryCode" id="countryCode" onChange={e => handleOnChange(e.target.value)} value={countryCode}>
+              {
+                countryList.map((country, index) => 
+                  <option value={country.alpha2Code} key={country.alpha2Code}>{country.name}</option>
+                )
+              }
+            </select>
+
+
             <div className="counter-lg-box">
               <div className="counter-lg-value">
                 {confirmed.value}
