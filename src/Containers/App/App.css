@@ -268,7 +268,15 @@ body {
 }
 
 .icon {
-  width: 9px;
+  width: 8px;
+}
+
+.list-box-separator {
+  margin: 0px 8px 16px 8px;
+  width: 20px;
+  box-sizing: border-box;
+  border-bottom: 4px dotted var(--secondary);
+  align-self: center;
 }
 
 /* Begin NavBar */
