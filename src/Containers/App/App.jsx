@@ -8,6 +8,7 @@ import Header from '../../Components/Header/Header';
 import CounterPage from '../CounterPage/CounterPage';
 import ChartPage from '../ChartPage/ChartPage';
 import NavBar from '../../Components/NavBar/NavBar';
+import NotFoundPage from '../NotFoundPage/NotFoundPage';
 
 const App = () => {
   return (
@@ -19,8 +20,13 @@ const App = () => {
           <Route exact path="/">
             <CounterPage />
           </Route>
+
           <Route path="/chart">
             <ChartPage />
+          </Route>
+
+          <Route path="*" exact>
+            <NotFoundPage />
           </Route>
         </Switch>
         
