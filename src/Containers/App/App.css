@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 :root {
-  --primary       : #000A12;
-  --secondary     : #263238;
-  --tertiary      : #182025;
-  --text          : #FFFFFF;
-  --text-secondary: #4F5B62;
-  --text-tertiary : #898989;
-  --text-success  : #52cc99;
-  --text-warning  : #f2b900;
-  --text-danger   : #f26353;
+  --primary        : #000A12;
+  --secondary      : #263238;
+  --tertiary       : #182025;
+  --text           : #FFFFFF;
+  --text-secondary : #4F5B62;
+  --text-tertiary  : #898989;
+  --text-quaternary: #e2e2e2;
+  --text-success   : #52cc99;
+  --text-warning   : #f2b900;
+  --text-danger    : #f26353;
 }
 
 html, body, .container, #root {
@@ -19,7 +20,7 @@ html, body, .container, #root {
 
 html {
   position: relative;
-  min-width: 250px;
+  min-width: 200px;
 }
 
 body {
@@ -378,6 +379,7 @@ body {
 
 /* Begin AboutPage */
 .content > h1 {
+  color: var(--text-quaternary);
   margin-top: 0px;
   margin-bottom: 0px;
   align-self: flex-start;
@@ -385,6 +387,7 @@ body {
 }
 
 .content > p {
+  color: var(--text-quaternary);
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0px;
@@ -395,4 +398,9 @@ body {
 p > a {
   color: var(--text);
   text-decoration: none;
+}
+
+p > a:hover {
+  color: var(--text);
+  text-decoration: underline;
 }

@@ -1,5 +1,6 @@
 # COVID19 Data
-Use data from https://github.com/mathdroid/covid-19-api
+COVID-19 global data in your hand 
+https://covid19.miftahafina.com
 
 ## Available Scripts
 In the project directory, you can run:
@@ -9,5 +10,5 @@ In the project directory, you can run:
 - `yarn build`
 - `yarn eject`
 
-## Demo
-Go to https://covid19.miftahafina.com
+## Data Source
+https://github.com/mathdroid/covid-19-api
