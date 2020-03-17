@@ -5,7 +5,7 @@ import NotFound from '../../Components/NotFound/NotFound';
 const NotFoundPage = () => {
   return (
     <div className="content">
-      <NotFound text="Halaman yang Anda cari hilang!  " />
+      <NotFound text="Halaman yang Anda cari hilang!" />
     </div>
   )
 }

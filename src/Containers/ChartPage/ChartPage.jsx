@@ -41,7 +41,7 @@ const ChartPage = () => {
     <div className="content">
       {
         loading ? <Loading /> : 
-        <ol className="chartList">
+        <ol className="chart-list">
           {
             countryChartList
             .filter((data, index) => (index < showRow || data.countryRegion === 'Indonesia' ))

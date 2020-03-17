@@ -25,7 +25,7 @@ const App = () => {
             <ChartPage />
           </Route>
 
-          <Route path="*" exact>
+          <Route exact path="*">
             <NotFoundPage />
           </Route>
         </Switch>
