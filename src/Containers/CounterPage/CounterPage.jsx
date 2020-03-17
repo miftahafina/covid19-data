@@ -5,6 +5,7 @@ import SelectBox from '../../Components/SelectBox/SelectBox';
 import CounterBoxLg from '../../Components/CounterBoxLg/CounterBoxLg';
 import CounterBox from '../../Components/CounterBox/CounterBox';
 import Disclaimer from '../../Components/Disclaimer/Disclaimer';
+import Loading from '../../Components/Loading/Loading';
 
 const CounterPage = () => {
   const [covidCount, setCovidCount] = useState(0);
@@ -27,6 +28,7 @@ const CounterPage = () => {
       })
       .catch(err => {
         console.log(err);
+        setloadingCovidCount(false);
         setFound(false);
       });
   }, [countryCode]);
@@ -44,6 +46,7 @@ const CounterPage = () => {
   }, []);
 
   const handleOnChange = (value) => {
+    setloadingCovidCount(true);
     setCountryCode(value);
   }
 
@@ -52,11 +55,12 @@ const CounterPage = () => {
   return (
     <div className="content">
       {
-        loadingCountryList ? <p>Memuat...</p> :
+        loadingCountryList ? '' :
         <Fragment>
           <SelectBox countryList={countryList} countryCode={countryCode} handleOnChange={(e) => handleOnChange(e)}/>
           {
-            !found || loadingCovidCount ? <p>Data tidak ditemukan.</p> :
+            loadingCovidCount ?  <Loading />:
+            (!found) ? <p>Data tidak ditemukan.</p> :
             <Fragment>
               <CounterBoxLg confirmed={confirmed} />
               <CounterBox confirmed={confirmed} recovered={recovered} deaths={deaths} />

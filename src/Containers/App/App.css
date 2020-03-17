@@ -325,6 +325,10 @@ body {
 }
 
 /* Begin Loading */
+.loading {
+  margin-top: 18px;
+}
+
 @-webkit-keyframes rotating /* Safari and Chrome */ {
   from {
     -webkit-transform: rotate(0deg);
