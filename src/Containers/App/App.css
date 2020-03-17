@@ -221,7 +221,7 @@ body {
   justify-content: flex-start;
 }
 
-.chartNumber {
+.chart-number {
   width: 40px;
   border-right: 2px solid var(--primary);
   padding-right: 8px;
@@ -237,7 +237,7 @@ body {
   font-size: 28px;
 }
 
-.chartContent {
+.chart-content {
   width: 100%;
   padding-left: 16px;
 
@@ -248,16 +248,24 @@ body {
   justify-content: center;
 }
 
-.countryName {
-  font-size: 20px;
+.country-name {
+  font-size: 16px;
   margin-bottom: 4px;
 }
 
-.provinceStateName {
+.province-state-name {
   font-size: 16px;
   color: var(--text-tertiary);
 }
 
-.caseSummary {
+.case-summary {
   font-size: 10px;
+}
+
+.case-summary-text {
+  margin-right: 8px;
+}
+
+.icon {
+  width: 9px;
 }
