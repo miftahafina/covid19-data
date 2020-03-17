@@ -1,9 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
 
-import confirmed from '../../Images/confirmed.png';
-import recovered from '../../Images/recovered.png';
-import deaths from '../../Images/deaths.png';
+import ListBox from '../../Components/ListBox/ListBox';
 
 const ChartPage = () => {
   const [countryChartList, setCountryChartList] = useState([]);
@@ -38,29 +36,12 @@ const ChartPage = () => {
           countryChartList
           .filter((data, index) => (index < showRow || data.countryRegion === 'Indonesia' ))
           .map((data, index) => (
-            <li key={index}>
-              <div className="chart-number">
-                <div className="position">
-                  { showOrder(data.countryRegion, index) }
-                </div>
-              </div>
-              <div className="chart-content">
-                <div className="country-name">
-                  {data.countryRegion.split(', ').reverse().join(' ')} {' '}
-                  <span className="province-state-name">{toggleProvinceState(data.provinceState, data.countryRegion)}</span>
-                </div>
-                <div className="case-summary">
-                  <img src={confirmed} alt="icon confirmed" className="icon"  />{' '}
-                  <span className="case-summary-text text-warning">{data.confirmed}</span>{' '}
-
-                  <img src={recovered} alt="icon recovered" className="icon"  />{' '}
-                  <span className="case-summary-text text-success">{data.recovered}</span>{' '}
-
-                  <img src={deaths} alt="icon deaths" className="icon"  />{' '}
-                  <span className="case-summary-text text-danger">{data.deaths}</span>
-                </div>
-              </div>
-            </li>
+            <ListBox
+              key={index} 
+              index={index}
+              data={data} 
+              showOrder={(a, b) => showOrder(a, b)}
+              toggleProvinceState={(a, b) => toggleProvinceState(a, b)}/>
           ))
         }
       </ol>
