@@ -15,11 +15,11 @@ const App = () => {
         <Header />
 
         <Switch>
-          <Route path="/chart">
-            <ChartPage />
-          </Route>
           <Route exact path="/">
             <CounterPage />
+          </Route>
+          <Route path="/chart">
+            <ChartPage />
           </Route>
         </Switch>
 
