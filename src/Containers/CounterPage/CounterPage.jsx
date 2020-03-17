@@ -6,6 +6,7 @@ import CounterBoxLg from '../../Components/CounterBoxLg/CounterBoxLg';
 import CounterBox from '../../Components/CounterBox/CounterBox';
 import Disclaimer from '../../Components/Disclaimer/Disclaimer';
 import Loading from '../../Components/Loading/Loading';
+import NotFound from '../../Components/NotFound/NotFound';
 
 const CounterPage = () => {
   const [covidCount, setCovidCount] = useState(0);
@@ -60,7 +61,7 @@ const CounterPage = () => {
           <SelectBox countryList={countryList} countryCode={countryCode} handleOnChange={(e) => handleOnChange(e)}/>
           {
             loadingCovidCount ?  <Loading />:
-            (!found) ? <p>Data tidak ditemukan.</p> :
+            (!found) ? <NotFound text="Data tidak ditemukan." /> :
             <Fragment>
               <CounterBoxLg confirmed={confirmed} />
               <CounterBox confirmed={confirmed} recovered={recovered} deaths={deaths} />

@@ -326,7 +326,8 @@ body {
 
 /* Begin Loading */
 .loading {
-  margin-top: 18px;
+  text-align: center;
+  margin-top: 56px;
 }
 
 @-webkit-keyframes rotating /* Safari and Chrome */ {
@@ -341,6 +342,7 @@ body {
     transform: rotate(360deg);
   }
 }
+
 @keyframes rotating {
   from {
     -ms-transform: rotate(0deg);

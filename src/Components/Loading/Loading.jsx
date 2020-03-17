@@ -1,10 +1,10 @@
 import React from 'react';
-import loadingImage from '../../Images/virus.png';
+import virusImage from '../../Images/virus.png';
 
 const Loading = () => {
   return (
     <div className="loading">
-      <img src={loadingImage} alt="Loading..." className="rotating"/>
+      <img src={virusImage} alt="Loading..." className="rotating"/>
       <p>Memuat...</p>
     </div>
   )
