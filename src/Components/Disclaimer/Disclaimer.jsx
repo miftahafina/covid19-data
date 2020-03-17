@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Footer = (props) => {
+const Disclaimer = (props) => {
 
   const lastUpdateIndo = (date) => {
     const d = new Date(date);
@@ -17,4 +17,4 @@ const Footer = (props) => {
   )
 }
 
-export default Footer;
+export default Disclaimer;
