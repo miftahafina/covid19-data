@@ -88,7 +88,7 @@ const App = () => {
                   <div className="counter-lg-value">
                     {confirmed.value}
                   </div>
-                  <div className="counter-lg-label">
+                  <div className="counter-lg-label text-warning">
                     Terkonfirmasi
                   </div>
                 </div>
@@ -98,7 +98,7 @@ const App = () => {
                     <div className="counter-value">
                       {recovered.value}
                     </div>
-                    <div className="counter-label">
+                    <div className="counter-label text-success">
                       Sembuh
                     </div>
                     <div className="counter-percentage">
@@ -112,7 +112,7 @@ const App = () => {
                     <div className="counter-value">
                       {deaths.value}
                     </div>
-                    <div className="counter-label">
+                    <div className="counter-label text-danger">
                       Meninggal
                     </div>
                     <div className="counter-percentage">

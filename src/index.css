@@ -7,6 +7,9 @@
   --text: #FFFFFF;
   --text-secondary: #4F5B62;
   --text-tertiary: #898989;
+  --text-success: #52cc99;
+  --text-warning: #f2b900;
+  --text-danger: #f26353;
 }
 
 html, body, .container, #root {
@@ -180,4 +183,16 @@ body {
 .help-text {
   color: var(--text-secondary);
   font-size: 12px;
+}
+
+.text-success {
+  color: var(--text-success);
+}
+
+.text-warning {
+  color: var(--text-warning);
+}
+
+.text-danger {
+  color: var(--text-danger);
 }
