@@ -302,15 +302,16 @@ body {
 }
 
 .navbar > button:active {
-  background-color: var(--secondary) !important;
+  background-color: var(--secondary);
 }
 
 .navbar > .active > img {
-  opacity: 1 !important;
+  opacity: 1;
 }
 
 .navbar > .active > p {
-  color: var(--active-text) !important;
+  opacity: 1;
+  color: var(--text);
 }
 
 .navbar > button > img {
@@ -319,5 +320,6 @@ body {
 }
 
 .navbar > button > p {
-  margin-top: 4px !important;
+  color: var(--text-tertiary);
+  margin-top: 4px;
 }

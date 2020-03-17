@@ -47,10 +47,6 @@ const CounterPage = () => {
     setCountryCode(value);
   }
 
-  useEffect(() => {
-    console.log('effect:', loadingCountryList);
-  }, [loadingCountryList])
-
   const { confirmed, recovered, deaths, lastUpdate } = covidCount;
 
   return (
