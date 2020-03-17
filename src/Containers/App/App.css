@@ -192,3 +192,72 @@ body {
 .text-danger {
   color: var(--text-danger);
 }
+
+/* Begin ChartPage */
+.chartList {
+  width: 100%;
+  padding-inline-start: 0px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  
+}
+
+.chartList > li {
+  box-sizing: border-box;
+  width: 100%;
+  height: 32px;
+  padding-inline-start: 0px;
+  padding: 32px 12px 32px 12px !important;
+  border-radius: 8px 8px 8px 8px;
+  margin-bottom: 16px;
+  background-color: var(--secondary);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.chartNumber {
+  width: 40px;
+  border-right: 2px solid var(--primary);
+  padding-right: 8px;
+  /* background-color: darkcyan; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.position {
+  font-size: 28px;
+}
+
+.chartContent {
+  width: 100%;
+  padding-left: 16px;
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.countryName {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.provinceStateName {
+  font-size: 16px;
+  color: var(--text-tertiary);
+}
+
+.caseSummary {
+  font-size: 10px;
+}
