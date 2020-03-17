@@ -7,6 +7,7 @@ import './App.css';
 import Header from '../../Components/Header/Header';
 import CounterPage from '../CounterPage/CounterPage';
 import ChartPage from '../ChartPage/ChartPage';
+import NavBar from '../../Components/NavBar/NavBar';
 
 const App = () => {
   return (
@@ -22,7 +23,8 @@ const App = () => {
             <ChartPage />
           </Route>
         </Switch>
-
+        
+        <NavBar />
       </div>
     </Router>
   );

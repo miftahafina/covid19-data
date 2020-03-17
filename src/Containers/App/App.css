@@ -269,3 +269,55 @@ body {
 .icon {
   width: 9px;
 }
+
+/* Begin NavBar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  margin-top: 1000px;
+  /* padding-top: 16px; */
+  /* padding-bottom: 16px; */
+  bottom: 0;
+  text-align: center;
+  background-color: var(--primary-light);
+  font-size: 12px;
+  color: #fff;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.navbar > button {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  /* padding: 12px 12px 12px 12px; */
+  padding-top: 12px;
+  background-color: var(--tertiary);
+  color: var(--inactive-text);
+  border: none;
+  outline: none;
+}
+
+.navbar > button:active {
+  background-color: var(--secondary) !important;
+}
+
+.navbar > .active > img {
+  opacity: 1 !important;
+}
+
+.navbar > .active > p {
+  color: var(--active-text) !important;
+}
+
+.navbar > button > img {
+  opacity: 0.5;
+  height: 24px;
+}
+
+.navbar > button > p {
+  margin-top: 4px !important;
+}
