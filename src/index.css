@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 :root {
-  --primary: #000A12;
-  --secondary: #263238;
-  --tertiary: #182025;
-  --text: #FFFFFF;
+  --primary       : #000A12;
+  --secondary     : #263238;
+  --tertiary      : #182025;
+  --text          : #FFFFFF;
   --text-secondary: #4F5B62;
-  --text-tertiary: #898989;
-  --text-success: #52cc99;
-  --text-warning: #f2b900;
-  --text-danger: #f26353;
+  --text-tertiary : #898989;
+  --text-success  : #52cc99;
+  --text-warning  : #f2b900;
+  --text-danger   : #f26353;
 }
 
 html, body, .container, #root {
