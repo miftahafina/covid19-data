@@ -7,8 +7,10 @@ import './App.css';
 import Header from '../../Components/Header/Header';
 import CounterPage from '../CounterPage/CounterPage';
 import ChartPage from '../ChartPage/ChartPage';
-import NavBar from '../../Components/NavBar/NavBar';
+import AboutPage from '../AboutPage/AboutPage';
 import NotFoundPage from '../NotFoundPage/NotFoundPage';
+
+import NavBar from '../../Components/NavBar/NavBar';
 
 const App = () => {
   return (
@@ -23,6 +25,10 @@ const App = () => {
 
           <Route path="/chart">
             <ChartPage />
+          </Route>
+
+          <Route path="/about">
+            <AboutPage />
           </Route>
 
           <Route exact path="*">

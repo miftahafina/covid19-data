@@ -375,3 +375,23 @@ body {
   -o-animation: rotating 2s linear infinite;
   animation: rotating 2s linear infinite;
 }
+
+/* Begin AboutPage */
+.content > h1 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  align-self: flex-start;
+}
+
+.content > p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0px;
+
+  align-self: flex-start;
+}
+
+p > a {
+  color: var(--text);
+  text-decoration: none;
+}
