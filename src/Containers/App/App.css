@@ -409,3 +409,8 @@ p > a:hover {
   color: var(--text);
   text-decoration: underline;
 }
+
+.logo {
+  width: 12px;
+  margin: 0px 1px 0px 1px;
+}
