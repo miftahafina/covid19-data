@@ -3,12 +3,14 @@ import { withRouter } from 'react-router';
 
 import globe from '../../Images/globe.png';
 import magnifier from '../../Images/magnifier.png';
+import hand from '../../Images/hand.png';
 import resume from '../../Images/resume.png';
 
 const NavBar = (props) => {
   const [currNav, setCurrNav] = useState({
     summary: '',
     chart: '',
+    doa: '',
     about: ''
   });
 
@@ -36,6 +38,12 @@ const NavBar = (props) => {
         })
         break;
 
+      case '/doa':
+        setCurrNav({
+          doa: 'active'
+        })
+        break;
+
       case '/about':
         setCurrNav({
           about: 'active'
@@ -47,7 +55,7 @@ const NavBar = (props) => {
     }
   }
 
-  const { summary, chart, about } = currNav;
+  const { summary, chart, doa, about } = currNav;
 
   return (
 
@@ -60,6 +68,11 @@ const NavBar = (props) => {
       <button className={chart} onClick={() => {handleNav('/chart')}}>
         <img src={magnifier} alt="magnifier icon"/>
         <p>Urutan</p>
+      </button>
+
+      <button className={doa} onClick={() => {handleNav('/doa')}}>
+        <img src={hand} alt="hand icon"/>
+        <p>Doa</p>
       </button>
       
       <button className={about} onClick={() => {handleNav('/about')}}>

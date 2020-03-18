@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Roboto|Scheherazade&display=swap');
 :root {
   --primary        : #000A12;
   --secondary      : #263238;
@@ -413,4 +412,56 @@ p > a:hover {
 .logo {
   width: 12px;
   margin: 0px 1px 0px 1px;
+}
+
+/* Begin DoaPage */
+.content > h2 {
+  color: var(--text-quaternary);
+  margin-top: 0px;
+  margin-bottom: 16px;
+  font-weight: normal;
+  line-height: 32px;
+  text-align: center;
+  
+  align-self: center;
+}
+
+.card-doa {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--secondary);
+  padding: 32px 16px 0px 16px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.card-doa > .doa-arabic {
+  font-family: 'Scheherazade', serif;
+  font-size: 36px;
+  direction: rtl;
+  margin: 0px;
+  padding: 0px;
+}
+
+.card-doa > .doa-latin {
+  font-size: 14px;
+  margin: 12px 0px 8px 0px;
+  padding: 0px;
+}
+
+.card-doa > .doa-translation {
+  font-size: 12px;
+  margin: 4px 0px 40px 0px;
+  padding: 0px;
+  color: var(--text-tertiary);
+}
+
+.content > .doa-history {
+  font-size: 12px;
+  margin: 8px 0px 16px 0px;
+  padding: 0px;
+  color: var(--text-tertiary);
+  text-align: center;
+  align-self: center;
+
 }
