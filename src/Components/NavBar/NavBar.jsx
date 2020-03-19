@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { withRouter } from 'react-router';
+import { useHistory } from 'react-router-dom';
 
 import globe from '../../Images/globe.png';
 import magnifier from '../../Images/magnifier.png';
 import hand from '../../Images/hand.png';
 import resume from '../../Images/resume.png';
 
-const NavBar = (props) => {
+const NavBar = () => {
   const [currNav, setCurrNav] = useState({
     summary: '',
     chart: '',
@@ -14,14 +14,16 @@ const NavBar = (props) => {
     about: ''
   });
 
-  const { pathname } = props.history.location;
+  let history = useHistory();
+
+  const { pathname } = history.location;
 
   useEffect(() => {
     handleActiveNav(pathname);
   }, [pathname])
 
   const handleNav = (destination) => {
-    props.history.push(destination);
+    history.push(destination);
   }
 
   const handleActiveNav = (current) => {
@@ -83,4 +85,4 @@ const NavBar = (props) => {
   )
 }
 
-export default withRouter(NavBar);
+export default NavBar;
