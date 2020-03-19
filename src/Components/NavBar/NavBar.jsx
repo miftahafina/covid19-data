@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import globe from '../../Images/globe.png';
-import magnifier from '../../Images/magnifier.png';
+import chartBar from '../../Images/chart-bar.png';
 import hand from '../../Images/hand.png';
 import resume from '../../Images/resume.png';
 
@@ -68,7 +68,7 @@ const NavBar = () => {
       </button>
 
       <button className={chart} onClick={() => {handleNav('/chart')}}>
-        <img src={magnifier} alt="magnifier icon"/>
+        <img src={chartBar} alt="magnifier icon"/>
         <p>Urutan</p>
       </button>
 
