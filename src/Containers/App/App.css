@@ -198,8 +198,8 @@ body {
   color: var(--text-danger);
 }
 
-/* Begin ChartPage */
-.chart-list {
+/* Begin RankPage */
+.rank-list {
   width: 100%;
   padding-inline-start: 0px;
   margin-top: 0px;
@@ -211,7 +211,7 @@ body {
   
 }
 
-.chart-list > li {
+.rank-list > li {
   box-sizing: border-box;
   width: 100%;
   height: 32px;
@@ -227,7 +227,7 @@ body {
   justify-content: flex-start;
 }
 
-.chart-number {
+.rank-number {
   width: 40px;
   border-right: 2px solid var(--primary);
   padding-right: 8px;
@@ -243,7 +243,7 @@ body {
   font-size: 28px;
 }
 
-.chart-content {
+.rank-content {
   width: 100%;
   padding-left: 16px;
 

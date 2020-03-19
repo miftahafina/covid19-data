@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import globe from '../../Images/globe.png';
-import chartBar from '../../Images/chart-bar.png';
-import hand from '../../Images/hand.png';
-import resume from '../../Images/resume.png';
+import globeIcon from '../../Images/globe.png';
+import chartBarIcon from '../../Images/chart-bar.png';
+import handIcon from '../../Images/hand.png';
+import resumeIcon from '../../Images/resume.png';
 
 const NavBar = () => {
   const [currNav, setCurrNav] = useState({
     summary: '',
-    chart: '',
+    rank: '',
     doa: '',
     about: ''
   });
@@ -34,9 +34,9 @@ const NavBar = () => {
         })
         break;
 
-      case '/chart':
+      case '/rank':
         setCurrNav({
-          chart: 'active'
+          rank: 'active'
         })
         break;
 
@@ -57,28 +57,28 @@ const NavBar = () => {
     }
   }
 
-  const { summary, chart, doa, about } = currNav;
+  const { summary, rank, doa, about } = currNav;
 
   return (
 
     <nav className="navbar">
       <button className={summary} onClick={() => {handleNav('/')}}>
-        <img src={globe} alt="globe icon"/>
+        <img src={globeIcon} alt="globe icon"/>
         <p>Ringkasan</p>
       </button>
 
-      <button className={chart} onClick={() => {handleNav('/chart')}}>
-        <img src={chartBar} alt="magnifier icon"/>
-        <p>Urutan</p>
+      <button className={rank} onClick={() => {handleNav('/rank')}}>
+        <img src={chartBarIcon} alt="magnifier icon"/>
+        <p>Peringkat</p>
       </button>
 
       <button className={doa} onClick={() => {handleNav('/doa')}}>
-        <img src={hand} alt="hand icon"/>
+        <img src={handIcon} alt="hand icon"/>
         <p>Doa</p>
       </button>
       
       <button className={about} onClick={() => {handleNav('/about')}}>
-        <img src={resume} alt="resume icon"/>
+        <img src={resumeIcon} alt="resume icon"/>
         <p>Tentang</p>
       </button>
     </nav>

@@ -4,8 +4,8 @@ import axios from 'axios';
 import ListBox from '../../Components/ListBox/ListBox';
 import Loading from '../../Components/Loading/Loading';
 
-const ChartPage = () => {
-  const [countryChartList, setCountryChartList] = useState([]);
+const RankPage = () => {
+  const [countryRank, setCountryRank] = useState([]);
   const [indonesiaNumber, setIndonesiaNumber] = useState(0);
   const [showRow] = useState(10);
   const [loading, setLoading] = useState(true);
@@ -13,7 +13,7 @@ const ChartPage = () => {
   useEffect(() => {
     axios.get('https://covid19.mathdro.id/api/confirmed')
       .then(res => {
-        setCountryChartList(res.data)
+        setCountryRank(res.data)
       })
       .then(() => {
         setLoading(false);
@@ -32,18 +32,18 @@ const ChartPage = () => {
   )
 
   useEffect(() => {
-    countryChartList.filter((data, index) => 
+    countryRank.filter((data, index) => 
       data.countryRegion === 'Indonesia' ? setIndonesiaNumber(index + 1) : ''
     )
-  }, [countryChartList])
+  }, [countryRank])
 
   return (
     <div className="content">
       {
         loading ? <Loading /> : 
-        <ol className="chart-list">
+        <ol className="rank-list">
           {
-            countryChartList
+            countryRank
             .filter((data, index) => (index < showRow || data.countryRegion === 'Indonesia' ))
             .map((data, index) => (
               <ListBox
@@ -60,4 +60,4 @@ const ChartPage = () => {
   )
 }
 
-export default ChartPage;
+export default RankPage;

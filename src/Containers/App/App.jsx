@@ -6,7 +6,7 @@ import './App.css';
 
 import Header from '../../Components/Header/Header';
 import CounterPage from '../CounterPage/CounterPage';
-import ChartPage from '../ChartPage/ChartPage';
+import RankPage from '../RankPage/RankPage';
 import DoaPage from '../DoaPage/DoaPage';
 import AboutPage from '../AboutPage/AboutPage';
 import NotFoundPage from '../NotFoundPage/NotFoundPage';
@@ -24,8 +24,8 @@ const App = () => {
             <CounterPage />
           </Route>
 
-          <Route path="/chart">
-            <ChartPage />
+          <Route path="/rank">
+            <RankPage />
           </Route>
 
           <Route path="/doa">
