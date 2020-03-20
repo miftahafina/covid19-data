@@ -7,6 +7,7 @@ import './App.css';
 import Header from '../../Components/Header/Header';
 import CounterPage from '../CounterPage/CounterPage';
 import RankPage from '../RankPage/RankPage';
+import ChartPage from '../ChartPage/ChartPage';
 import DoaPage from '../DoaPage/DoaPage';
 import AboutPage from '../AboutPage/AboutPage';
 import NotFoundPage from '../NotFoundPage/NotFoundPage';
@@ -26,6 +27,10 @@ const App = () => {
 
           <Route path="/rank">
             <RankPage />
+          </Route>
+
+          <Route path="/chart">
+            <ChartPage />
           </Route>
 
           <Route path="/doa">
