@@ -463,5 +463,13 @@ p > a:hover {
   color: var(--text-tertiary);
   text-align: center;
   align-self: center;
+}
 
+.card-chart {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid var(--secondary);
+  padding: 16px 16px 16px 16px;
+  border-radius: 16px;
+  text-align: center;
 }

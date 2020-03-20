@@ -96,6 +96,37 @@ const ChartPage = () => {
     ));
   }, [dateRange]);
 
+  const getChartOptions = () => {
+    return {
+      legend:{
+        position: 'bottom',
+        labels:{
+          fontColor: "white",
+        }
+      },
+      tooltips: {
+        mode: 'index',
+        intersect: false,
+      },
+      hover: {
+        mode: 'nearest',
+        intersect: true
+      },
+      scales: {
+        xAxes: [{
+          display: true,
+          scaleLabel: {
+            display: true,
+            labelString: 'Tanggal update',
+          },
+          ticks: {
+            fontSize: 10
+          }
+        }]
+      }
+    }
+  }
+
   const getChartData = () => {
     return {
       labels: chartLabel,
@@ -127,8 +158,18 @@ const ChartPage = () => {
 
   return (
     <div className="content">
-      <h1>Daily Report</h1>
-      <Line data={getChartData} />
+      <h2>
+        Grafik Perkembangan<br />
+        <small>Kasus COVID-19 di Indonesia</small>
+      </h2>
+
+      <div className="card-chart">
+        <Line data={getChartData()} options={getChartOptions()}/>
+      </div>
+
+      <div className="footer">
+        Perhatian! Saat ini masih terdapat redudansi data pada tanggal update yang diperoleh, insya Allah akan segera diperbaiki. Data diambil dari <a href="https://github.com/mathdroid/covid-19-api">mathdroid/covid-19-api</a>
+      </div>
     </div>
   )
 }
