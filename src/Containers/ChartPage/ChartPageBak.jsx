@@ -1,11 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Line } from 'react-chartjs-2';
 
 const ChartPage = () => {
   const [dailyReport, setDailyReport] = useState([]);
-  const [startDate] = useState(new Date('2020-03-02')); // 2 Maret 2020
-  const [endDate] = useState(new Date('2020-03-18')); // current date
+  const [startDate, setStartDate] = useState(); // 2 Maret 2020
+  const [endDate, setEndDate] = useState(); // current date
   const [dateRange, setDateRange] = useState([]);
+
+  const initDate = () => {
+    let firstCaseDate = new Date('2020-03-02');
+    let today = new Date();
+
+    setStartDate(firstCaseDate);
+    setEndDate(today.setDate(today.getDate() - 1));
+  }
+
+  useEffect(() => {
+    initDate();
+  }, [])
 
   const getDateRange = (start, end) => {
     let arrDate = [];
@@ -24,25 +37,23 @@ const ChartPage = () => {
     setDateRange(arrDateFormatted);
   }
   
-  useEffect(() => {
-    if (dateRange.length > 0) {
-      console.log('dateRange', dateRange);
-    }
-  }, [dateRange])
+  // useEffect(() => {
+  //   if (dateRange.length > 0) {
+  //     console.log('dateRange', dateRange);
+  //   }
+  // }, [dateRange])
 
   useEffect(() => {
     getDateRange(startDate, endDate);
   }, [startDate, endDate])
 
-  useEffect(() => {
-      console.log('dailyReport', dailyReport);
-    if (dailyReport.length > 0) {
-    }
-  }, [dailyReport])
+  // useEffect(() => {
+  //   if (dailyReport.length > 0) {
+  //     console.log('dailyReport', dailyReport);
+  //   }
+  // }, [dailyReport])
 
   useEffect(() => {
-    let arrFiltered = [];
-
     dateRange.map((data, index) => (
       axios.get(`https://covid19.mathdro.id/api/daily/${data}`)
         .then(res => {
@@ -52,25 +63,50 @@ const ChartPage = () => {
         )
 
         .then(filtered => {
-          arrFiltered.push(...filtered);
-          setDailyReport(arrFiltered.concat(filtered));
+          setDailyReport(dailyReport => [...dailyReport, ...filtered])
         })
 
-        .then(() => {
-          console.log('arrFiltered', arrFiltered);
-        })
-
-        .catch((err) => {
+        .catch(err => {
           console.log('Error when fetching data from API', err);
         })
     ));
-
-    console.log('arrFiltered outside loop', arrFiltered);
   }, [dateRange]);
+
+  const getChartData = () => {
+    return {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 1
+      }]
+    }
+  }
 
   return (
     <div className="content">
       <h1>Daily Report</h1>
+
+      <Line data={getChartData} />
+      
+      
       <ul>
         {
           dailyReport.map((data, index) => (
