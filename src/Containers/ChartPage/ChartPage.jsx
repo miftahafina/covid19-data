@@ -154,21 +154,21 @@ const ChartPage = () => {
         {
           label: 'Terkonfirmasi',
           data: chartDataConfirmed,
-          backgroundColor: '#000A12',
+          // backgroundColor: '#000A12',
           borderColor: '#f2b900',
           borderWidth: 1
         },
         {
           label: 'Sembuh',
           data: chartDataRecovered,
-          backgroundColor: '#000A12',
+          // backgroundColor: '#000A12',
           borderColor: '#52cc99',
           borderWidth: 1
         },
         {
           label: 'Meninggal',
           data: chartDataDeaths,
-          backgroundColor: '#000A12',
+          // backgroundColor: '#000A12',
           borderColor: '#f26353',
           borderWidth: 1
         },
