@@ -124,7 +124,7 @@ const ChartPage = () => {
           ticks: {
             fontSize: 10,
             autoSkip: true,
-            // maxTicksLimit: 10
+            maxTicksLimit: 8
           },
           gridLines: {
             display: false,
