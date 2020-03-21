@@ -6,8 +6,8 @@ const ChartPage = () => {
   const [dailyReport, setDailyReport] = useState([]);
   const [sortedDailyReport, setSortedDailyReport] = useState([]);
 
-  const [startDate, setStartDate] = useState(); // 2 Maret 2020
-  const [endDate, setEndDate] = useState(); // current date
+  const [startDate, setStartDate] = useState();
+  const [endDate, setEndDate] = useState();
   const [dateRange, setDateRange] = useState([]);
 
   const [chartLabel, setChartLabel] = useState([]);
@@ -32,8 +32,10 @@ const ChartPage = () => {
   }, [dailyReport])
 
   useEffect(() => {
+    let monthIndo = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Ags', 'Sep', 'Okt', 'Nov', 'Des'];
+    
     setChartLabel(sortedDailyReport.map(data => {
-      return `${new Date(data.lastUpdate).getDate()}/${new Date(data.lastUpdate).getMonth()+1}`
+      return `${new Date(data.lastUpdate).getDate()} ${monthIndo[new Date(data.lastUpdate).getMonth()]}`
     }));
   }, [sortedDailyReport])
 
@@ -120,7 +122,20 @@ const ChartPage = () => {
             labelString: 'Tanggal update',
           },
           ticks: {
-            fontSize: 10
+            fontSize: 10,
+            autoSkip: true,
+            // maxTicksLimit: 10
+          },
+          gridLines: {
+            display: false,
+            color: '#182025'
+          }
+        }],
+        yAxes: [{
+          gridLines: {
+            display: true,
+            color: '#182025',
+            height: 200
           }
         }]
       }
