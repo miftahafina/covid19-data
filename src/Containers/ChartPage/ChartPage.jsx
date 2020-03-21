@@ -132,6 +132,11 @@ const ChartPage = () => {
           }
         }],
         yAxes: [{
+          ticks: {
+            fontSize: 10,
+            autoSkip: true,
+            maxTicksLimit: 6
+          },
           gridLines: {
             display: true,
             color: '#182025',

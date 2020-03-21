@@ -3,7 +3,7 @@ import React from 'react';
 const DoaPage = () => {
   return (
     <div className="content">
-      <h2>Doa Mohon Dilindungi<br/> dari Penyakit Berbahaya</h2>
+      <h2>Doa Mohon Dilindungi<br/> <small>dari Penyakit Berbahaya</small></h2>
 
       <div className="card-doa">
         <p dir="rtl" className="doa-arabic">اللَّهُمَّ إِنِّي أَعُوْذُ بِكَ</p>
