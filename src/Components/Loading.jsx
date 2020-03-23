@@ -1,5 +1,5 @@
 import React from 'react';
-import virusImage from '../../Images/virus.png';
+import virusImage from '../Images/virus.png';
 
 const Loading = () => {
   return (

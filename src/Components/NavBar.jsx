@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import coronavirusIcon from '../../Images/home.png';
-import globeIcon from '../../Images/globe.png';
-import chartBarIcon from '../../Images/chart-bar.png';
-import handIcon from '../../Images/hand.png';
-import resumeIcon from '../../Images/resume.png';
+import coronavirusIcon from '../Images/home.png';
+import globeIcon from '../Images/globe.png';
+import chartBarIcon from '../Images/chart-bar.png';
+import handIcon from '../Images/hand.png';
+import resumeIcon from '../Images/resume.png';
 
 const NavBar = () => {
   const [currNav, setCurrNav] = useState({

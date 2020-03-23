@@ -4,15 +4,14 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import 'normalize.css';
 import './App.css';
 
-import Header from '../../Components/Header/Header';
-import CounterPage from '../CounterPage/CounterPage';
-import RankPage from '../RankPage/RankPage';
-import ChartPage from '../ChartPage/ChartPage';
-import DoaPage from '../DoaPage/DoaPage';
-import AboutPage from '../AboutPage/AboutPage';
-import NotFoundPage from '../NotFoundPage/NotFoundPage';
-
-import NavBar from '../../Components/NavBar/NavBar';
+import Header from '../Components/Header';
+import CounterPage from './CounterPage';
+import RankPage from './RankPage';
+import ChartPage from './ChartPage';
+import DoaPage from './DoaPage';
+import AboutPage from './AboutPage';
+import NotFoundPage from './NotFoundPage';
+import NavBar from '../Components/NavBar';
 
 const App = () => {
   return (

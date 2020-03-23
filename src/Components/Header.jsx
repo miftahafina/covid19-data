@@ -1,5 +1,5 @@
 import React from 'react';
-import virusWhite from '../../Images/virus-white.png';
+import virusWhite from '../Images/virus-white.png';
 
 const Header = (props) => {
   return (

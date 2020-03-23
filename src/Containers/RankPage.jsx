@@ -1,8 +1,8 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
 
-import ListBox from '../../Components/ListBox/ListBox';
-import Loading from '../../Components/Loading/Loading';
+import ListBox from '../Components/ListBox';
+import Loading from '../Components/Loading';
 
 const RankPage = () => {
   const [countryRank, setCountryRank] = useState([]);

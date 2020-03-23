@@ -1,12 +1,12 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import axios from 'axios';
 
-import SelectBox from '../../Components/SelectBox/SelectBox';
-import CounterBoxLg from '../../Components/CounterBoxLg/CounterBoxLg';
-import CounterBox from '../../Components/CounterBox/CounterBox';
-import Disclaimer from '../../Components/Disclaimer/Disclaimer';
-import Loading from '../../Components/Loading/Loading';
-import NotFound from '../../Components/NotFound/NotFound';
+import SelectBox from '../Components/SelectBox';
+import CounterBoxLg from '../Components/CounterBoxLg';
+import CounterBox from '../Components/CounterBox';
+import Disclaimer from '../Components/Disclaimer';
+import Loading from '../Components/Loading';
+import NotFound from '../Components/NotFound';
 
 const CounterPage = () => {
   const [covidCount, setCovidCount] = useState(0);

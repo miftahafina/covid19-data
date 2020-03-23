@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 
-import confirmed from '../../Images/confirmed.png';
-import recovered from '../../Images/recovered.png';
-import deaths from '../../Images/deaths.png';
+import confirmed from '../Images/confirmed.png';
+import recovered from '../Images/recovered.png';
+import deaths from '../Images/deaths.png';
 
 const ListBox = (props) => {
   return (
