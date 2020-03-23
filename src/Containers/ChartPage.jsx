@@ -100,8 +100,10 @@ const ChartPage = () => {
 
   const getChartOptions = () => {
     return {
+      responsive: true,
+      maintainAspectRatio: false,
       legend:{
-        position: 'bottom',
+        position: 'top',
         labels:{
           fontColor: "white",
         }
@@ -118,7 +120,7 @@ const ChartPage = () => {
         xAxes: [{
           display: true,
           scaleLabel: {
-            display: true,
+            // display: true,
             labelString: 'Tanggal update',
           },
           ticks: {
@@ -143,6 +145,11 @@ const ChartPage = () => {
             height: 200
           }
         }]
+      },
+      elements: {
+          point:{
+              radius: 0
+          }
       }
     }
   }

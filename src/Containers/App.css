@@ -473,3 +473,8 @@ p > a:hover {
   border-radius: 16px;
   text-align: center;
 }
+
+canvas {
+  /* width:1000px !important; */
+  height:200px !important;
+}
