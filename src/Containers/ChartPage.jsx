@@ -32,10 +32,8 @@ const ChartPage = () => {
   }, [dailyReport])
 
   useEffect(() => {
-    let monthIndo = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Ags', 'Sep', 'Okt', 'Nov', 'Des'];
-    
     setChartLabel(sortedDailyReport.map(data => {
-      return `${new Date(data.lastUpdate).getDate()} ${monthIndo[new Date(data.lastUpdate).getMonth()]}`
+      return `${data.chartLabelDate}`
     }));
   }, [sortedDailyReport])
 
@@ -89,6 +87,13 @@ const ChartPage = () => {
         )
 
         .then(filtered => {
+          let monthIndo = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Ags', 'Sep', 'Okt', 'Nov', 'Des'];
+
+          let chartLabelDate  = data.split('-')[1];
+          let chartLabelMonth = monthIndo[data.split('-')[0]];
+
+          filtered[0]['chartLabelDate'] = `${chartLabelDate} ${chartLabelMonth}`;
+
           setDailyReport(dailyReport => [...dailyReport, ...filtered])
         })
 
@@ -126,7 +131,7 @@ const ChartPage = () => {
           ticks: {
             fontSize: 10,
             autoSkip: true,
-            maxTicksLimit: 8
+            maxTicksLimit: 10
           },
           gridLines: {
             display: false,
@@ -195,7 +200,7 @@ const ChartPage = () => {
       </div>
 
       <div className="footer">
-        Perhatian! Saat ini masih terdapat redudansi data pada tanggal update yang diperoleh, insya Allah akan segera diperbaiki. Data diambil dari <a href="https://github.com/mathdroid/covid-19-api">mathdroid/covid-19-api</a>
+        Data diambil dari <a href="https://github.com/mathdroid/covid-19-api">mathdroid/covid-19-api</a>
       </div>
     </div>
   )
