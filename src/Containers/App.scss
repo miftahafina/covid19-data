@@ -1,0 +1,428 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Scheherazade&display=swap');
+
+$primary        : #000A12;
+$secondary      : #263238;
+$tertiary       : #182025;
+$text           : #FFFFFF;
+$text-secondary : #4F5B62;
+$text-tertiary  : #898989;
+$text-quaternary: #e2e2e2;
+$text-success   : #52cc99;
+$text-warning   : #f2b900;
+$text-danger    : #f26353;
+
+@mixin flexbox($display, $direction, $align, $justify) {
+  display: $display;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+html, body, .container, #root {
+  /* height: 100%; */
+  min-height: 100%;
+}
+
+html {
+  position: relative;
+  min-width: 200px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: $primary;
+}
+
+.container {
+  color: $text;
+  @include flexbox(flex, column, center, space-between);
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  flex: 0 0 48px;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: $secondary;
+  -webkit-box-shadow: -2px 4px 21px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: -2px 4px 21px -2px rgba(0,0,0,0.75);
+  box-shadow: -2px 4px 21px -2px rgba(0,0,0,0.75);
+  @include flexbox(flex, column, center, center);
+}
+
+.title {
+  font-size: 16px;
+  color: $text;
+}
+
+.content {
+  margin-top: 72px;
+  width: 100%;
+  flex: 1;
+  box-sizing: border-box;
+  background-color: $primary;
+  border-radius: 16px 16px 0px 0px;
+  padding: 16px 16px 80px 16px ;
+  @include flexbox(flex, column, center, flex-start);
+
+  .doa-history {
+    font-size: 12px;
+    margin: 8px 0px 16px 0px;
+    padding: 0px;
+    color: $text-tertiary;
+    text-align: center;
+    align-self: center;
+  }
+
+  h1 {
+    color: $text-quaternary;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    align-self: flex-start;
+    font-weight: normal;
+  }
+
+  p {
+    color: $text-quaternary;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 0px;
+    align-self: flex-start;
+
+    a {
+      color: $text;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: $text;
+      text-decoration: underline;
+    }
+  }
+
+  h2 {
+    color: $text-quaternary;
+    margin-top: 0px;
+    margin-bottom: 16px;
+    font-weight: normal;
+    line-height: 32px;
+    text-align: center;
+    align-self: center;
+  }
+}
+
+.select-box {
+  width: 100%;
+  flex: 1;
+  box-sizing: border-box;
+  background-color: $secondary;
+  border-radius: 16px;
+  padding: 16px;
+  color: $text;
+  margin-bottom: 8px;
+  border: none;
+  outline: none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  appearance:none;
+  @include flexbox(flex, column, center, center);
+}
+
+.select-box:active {
+  outline: none;
+  background-color: $tertiary;
+}
+
+.counter-lg-box {
+  width: 100%;
+  flex: 1;
+  box-sizing: border-box;
+  border: 2px solid $secondary;
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 16px;
+  @include flexbox(flex, column, center, center);
+}
+
+.counter-lg-value {
+  font-size: 96px;
+}
+
+.counter-lg-label {
+  font-size: 18px;
+}
+
+.counter-container {
+  margin-top: 16px;
+  width: 100%;
+  flex: 1;
+  box-sizing: border-box;
+  @include flexbox(flex, row, space-between, center);
+}
+
+.counter-box {
+  width: 100%;
+  flex: 1;
+  box-sizing: border-box;
+  border: 2px solid $secondary;
+  border-radius: 16px;
+  padding: 16px;
+  @include flexbox(flex, column, center, center);
+}
+
+.counter-value {
+  font-size: 64px;
+}
+
+.counter-label {
+  font-size: 16px;
+}
+
+.counter-percentage {
+  margin-top: 8px;
+  font-size: 10px;
+  color: $text-tertiary;
+}
+
+.counter-box-separator {
+  width: 16px;
+}
+
+.footer {
+  margin-top: 32px;
+  line-height: 18px;
+  color: $text-secondary;
+  font-size: 12px;
+  text-align: center;
+
+  a {
+    color: $text-secondary;
+    text-decoration: none;
+  }
+}
+
+.help-text {
+  color: $text-secondary;
+  font-size: 12px;
+}
+
+.text-success {
+  color: $text-success;
+}
+
+.text-warning {
+  color: $text-warning;
+}
+
+.text-danger {
+  color: $text-danger;
+}
+
+.rank-list {
+  width: 100%;
+  padding-inline-start: 0px;
+  margin-top: 0px;
+  @include flexbox(flex, column, flex-start, center);
+}
+
+.rank-list {
+  li {
+    box-sizing: border-box;
+    width: 100%;
+    height: 32px;
+    padding-inline-start: 0px;
+    padding: 32px 12px 32px 12px !important;
+    border-radius: 8px 8px 8px 8px;
+    margin-bottom: 16px;
+    background-color: $secondary;
+    @include flexbox(flex, row, center, flex-start);
+  }
+}
+
+.rank-number {
+  width: 40px;
+  border-right: 2px solid $primary;
+  padding-right: 8px;
+  @include flexbox(flex, column, center, center);
+}
+
+.position {
+  font-size: 28px;
+}
+
+.rank-content {
+  width: 100%;
+  padding-left: 16px;
+  box-sizing: border-box;
+  @include flexbox(flex, column, flex-start, center);
+}
+
+.country-name {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.province-state-name {
+  font-size: 16px;
+  color: $text-tertiary;
+}
+
+.case-summary {
+  font-size: 10px;
+}
+
+.case-summary-text {
+  margin-right: 8px;
+}
+
+.icon {
+  width: 8px;
+}
+
+.list-box-separator {
+  margin: 0px 8px 16px 8px;
+  width: 20px;
+  box-sizing: border-box;
+  border-bottom: 4px dotted $secondary;
+  align-self: center;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  margin-top: 1000px;
+  bottom: 0;
+  text-align: center;
+  font-size: 12px;
+  color: $text;
+  @include flexbox(flex, row, center, space-around);
+
+  button {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    padding-top: 12px;
+    background-color: $tertiary;
+    border: none;
+    outline: none;
+  }
+
+  button:active {
+    background-color: $secondary;
+  }
+
+  .active {
+    img {
+      opacity: 1;
+    }
+
+    p {
+        opacity: 1;
+        color: $text;
+      }
+  } 
+
+  button {
+    img {
+      opacity: 0.5;
+      height: 24px;
+    }
+
+  p {
+      color: $text-tertiary;
+      margin-top: 4px;
+    }
+  }
+}
+
+.loading {
+  text-align: center;
+  margin-top: 56px;
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.rotating {
+  -webkit-animation: rotating 2s linear infinite;
+  -moz-animation: rotating 2s linear infinite;
+  -ms-animation: rotating 2s linear infinite;
+  -o-animation: rotating 2s linear infinite;
+  animation: rotating 2s linear infinite;
+}
+
+.logo {
+  width: 12px;
+  margin: 0px 1px 0px 1px;
+}
+
+.card-doa {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: $secondary;
+  padding: 32px 16px 0px 16px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.card-doa > .doa-arabic {
+  font-family: 'Scheherazade', serif;
+  font-size: 36px;
+  direction: rtl;
+  margin: 0px;
+  padding: 0px;
+}
+
+.card-doa > .doa-latin {
+  font-size: 14px;
+  margin: 12px 0px 8px 0px;
+  padding: 0px;
+}
+
+.card-doa > .doa-translation {
+  font-size: 12px;
+  margin: 4px 0px 40px 0px;
+  padding: 0px;
+  color: $text-tertiary;
+}
+
+.card-chart {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid $secondary;
+  padding: 16px 16px 16px 16px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+canvas {
+  height:210px !important;
+}

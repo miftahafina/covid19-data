@@ -2,7 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import 'normalize.css';
-import './App.css';
+import './App.scss';
 
 import Header from '../Components/Header';
 import CounterPage from './CounterPage';
