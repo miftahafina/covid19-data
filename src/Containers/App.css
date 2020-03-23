@@ -475,6 +475,5 @@ p > a:hover {
 }
 
 canvas {
-  /* width:1000px !important; */
-  height:225px !important;
+  height:210px !important;
 }

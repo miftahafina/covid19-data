@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Line } from 'react-chartjs-2';
 
+import ChartOptions from '../Config/ChartOptions';
+
 const ChartPage = () => {
   const [dailyReport, setDailyReport] = useState([]);
   const [sortedDailyReport, setSortedDailyReport] = useState([]);
@@ -105,62 +107,6 @@ const ChartPage = () => {
     ));
   }, [dateRange]);
 
-  const getChartOptions = () => {
-    return {
-      responsive: true,
-      maintainAspectRatio: false,
-      legend:{
-        position: 'top',
-        labels:{
-          fontColor: "white",
-        }
-      },
-      tooltips: {
-        mode: 'index',
-        intersect: false,
-      },
-      hover: {
-        mode: 'nearest',
-        intersect: true
-      },
-      scales: {
-        xAxes: [{
-          display: true,
-          scaleLabel: {
-            // display: true,
-            labelString: 'Tanggal update',
-          },
-          ticks: {
-            fontSize: 10,
-            autoSkip: true,
-            maxTicksLimit: 10
-          },
-          gridLines: {
-            display: false,
-            color: '#182025'
-          }
-        }],
-        yAxes: [{
-          ticks: {
-            fontSize: 10,
-            autoSkip: true,
-            maxTicksLimit: 7
-          },
-          gridLines: {
-            display: true,
-            color: '#182025',
-            height: 200
-          }
-        }]
-      },
-      elements: {
-          point:{
-              radius: 0
-          }
-      }
-    }
-  }
-
   const getChartData = () => {
     return {
       labels: chartLabel,
@@ -198,7 +144,7 @@ const ChartPage = () => {
       </h2>
 
       <div className="card-chart">
-        <Line data={getChartData()} options={getChartOptions()}/>
+        <Line data={getChartData()} options={ChartOptions}/>
       </div>
 
       <div className="footer">
