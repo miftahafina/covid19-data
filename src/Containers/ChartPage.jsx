@@ -16,10 +16,10 @@ const ChartPage = () => {
   const [chartDataDeaths, setChartDataDeaths] = useState([]);
 
   const compare = (a, b) => {
-    if ( a.lastUpdate < b.lastUpdate ){
+    if ( a.chartLabelDate < b.chartLabelDate ){
       return -1;
     }
-    if ( a.lastUpdate > b.lastUpdate ){
+    if ( a.chartLabelDate > b.chartLabelDate ){
       return 1;
     }
     return 0;
@@ -33,7 +33,11 @@ const ChartPage = () => {
 
   useEffect(() => {
     setChartLabel(sortedDailyReport.map(data => {
-      return `${data.chartLabelDate}`
+      let monthIndoList = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Ags', 'Sep', 'Okt', 'Nov', 'Des'];
+      let date = new Date(data.chartLabelDate).getDate();
+      let monthIndo = monthIndoList[new Date(data.chartLabelDate).getMonth()];
+
+      return `${date} ${monthIndo}`
     }));
   }, [sortedDailyReport])
 
@@ -87,12 +91,12 @@ const ChartPage = () => {
         )
 
         .then(filtered => {
-          let monthIndo = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Ags', 'Sep', 'Okt', 'Nov', 'Des'];
-
+          let chartLabelYear  = data.split('-')[2];
+          let chartLabelMonth = data.split('-')[0];
           let chartLabelDate  = data.split('-')[1];
-          let chartLabelMonth = monthIndo[data.split('-')[0]];
 
-          filtered[0]['chartLabelDate'] = `${chartLabelDate} ${chartLabelMonth}`;
+          filtered[0]['chartLabelDate'] = new Date(`${chartLabelYear}-${chartLabelMonth}-${chartLabelDate}`);
+          console.log(filtered[0]['chartLabelDate']);
 
           setDailyReport(dailyReport => [...dailyReport, ...filtered])
         })
