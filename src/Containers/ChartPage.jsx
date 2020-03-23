@@ -96,8 +96,6 @@ const ChartPage = () => {
           let chartLabelDate  = data.split('-')[1];
 
           filtered[0]['chartLabelDate'] = new Date(`${chartLabelYear}-${chartLabelMonth}-${chartLabelDate}`);
-          console.log(filtered[0]['chartLabelDate']);
-
           setDailyReport(dailyReport => [...dailyReport, ...filtered])
         })
 
